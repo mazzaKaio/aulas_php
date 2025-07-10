@@ -11,6 +11,8 @@
         date_default_timezone_set('America/Los_Angeles');
         // Manipulando HTML e PHP
         $data_hoje = date("d/m/y", time());
+
+        // Cristo ou /bas
     ?>
 
     <p align="center">
