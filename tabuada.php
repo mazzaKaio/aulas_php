@@ -12,6 +12,8 @@
 
         while ($numero <= 10){
 
+            echo "<h4>Tabuada do $numero</h4>";
+
             while ($i <= 10){
                 echo "$numero X $i = " . $numero * $i . "<br>";
                 $i++;
