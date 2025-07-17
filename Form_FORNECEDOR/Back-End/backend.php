@@ -9,8 +9,8 @@
     <?php
         if (isset($_GET['nome_fornecedor']) && isset($_GET['cnpj_fornecedor']) && isset($_GET['email_fornecedor']) &&
         isset($_GET['ie_fornecedor']) && isset($_GET['telefone_fornecedor']) && isset($_GET['cep_fornecedor']) &&
-        isset($_GET['cep_fornecedor']) && isset($_GET['estado_fornecedor']) && isset($_GET['cidade_fornecedor']) &&
-        isset($_GET['bairro_fornecedor']) && isset($_GET['logradouro_fornecedor']) && isset($_GET['numero_fornecedor']) ) {
+        isset($_GET['estado_fornecedor']) && isset($_GET['cidade_fornecedor']) && isset($_GET['bairro_fornecedor']) && 
+        isset($_GET['logradouro_fornecedor']) && isset($_GET['numero_fornecedor']) ) {
 
             echo "<h2>INFORMAÇÕES CADASTRADAS:</h2>";
             echo "Nome do fornecedor: ".$_GET['nome_fornecedor'];
