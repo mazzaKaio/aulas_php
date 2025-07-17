@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="forms" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrao de Fornecedor</title>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../functions.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="../menu_principal.html">Inicio</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Cadastrar</a>
+            <div class="dropdown-content">
+                <a href="fornecedor.html">Fornecedor</a>
+                <a href="tela_funcionario.html">Funcionario</a>
+                <a href="formulario_cliente_css.html">Cliente</a>
+                <a href="FormularioPeca_CSS.html">Produto</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Pesquisar</a>
+            <div class="dropdown-content">
+                <a onclick="nao_disp()">Fornecedor</a>
+                <a onclick="nao_disp()">Funcionario</a>
+                <a onclick="nao_disp()">Cliente</a>
+                <a onclick="nao_disp()">Produto</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Alterar</a>
+            <div class="dropdown-content">
+                <a onclick="nao_disp()">Fornecedor</a>
+                <a onclick="nao_disp()">Funcionario</a>
+                <a onclick="nao_disp()">Cliente</a>
+                <a onclick="nao_disp()">Produto</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Excluir</a>
+            <div class="dropdown-content">
+                <a onclick="nao_disp()">Fornecedor</a>
+                <a onclick="nao_disp()">Funcionario</a>
+                <a onclick="nao_disp()">Cliente</a>
+                <a onclick="nao_disp()">Produto</a>
+            </div>
+        </li>
+    </ul>
+
+    <form action="backend.php" method="GET">
+        <table>
+
+            <tr>
+                <td rowspan="2">
+                    <img src="logo.jpeg" alt="logo vortex" height="110" width="120">
+                </td>
+
+                <th rowspan="2">
+                    Cadastrar<br>Fornecedor
+                </th>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td>
+                    Nome do fornecedor:
+                </td>
+                <td>
+                    <input type="text" name="nome_fornecedor" onkeypress="mascara(this, somentetexto)">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    CNPJ do fornecedor:
+                </td>
+                <td>
+                    <input type="text" name="cnpj_fornecedor" onkeydown="mascara(this, cnpj)" maxlength="18">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Email do fornecedor:
+                </td>
+                <td>
+                    <input type="text" name="email_fornecedor">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    IE do fornecedor:
+                </td>
+                <td>
+                    <input type="text" name="ie_fornecedor" maxlength="9" onkeypress="mascara(this, somentenum)">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Telefone do fornecedor:
+                </td>
+                <td>
+                    <input type="text" name="telefone_fornecedor" maxlength="15" onkeypress="mascara(this, telefone)">
+                </td>
+            </tr>
+
+            <tr>
+                <th colspan="2">
+                    Endereço
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    CEP:
+                </td>
+                <td>
+                    <input type="text" name="cep_fornecedor" id="cep_fornecedor" onkeypress="mascara(this, cepcliente)" maxlength="10">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Estado:
+                </td>
+                <td>
+                    <input type="text" name="estado_fornecedor" id="estado_fornecedor" onkeypress="mascara(this, somentetexto)">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Cidade:
+                </td>
+                <td>
+                    <input type="text" name="cidade_fornecedor" id="cidade_fornecedor" onkeypress="mascara(this, somentetexto)">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Bairro:
+                </td>
+                <td>
+                    <input type="text" name="bairro_fornecedor" id="bairro_fornecedor" onkeypress="mascara(this, somentetexto)">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Logradouro:
+                </td>
+                <td>
+                    <input type="text" name="logradouro_fornecedor" id="logradouro_fornecedor" onkeypress="mascara(this, somentetexto)">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Número:
+                </td>
+                <td>
+                    <input type="text" name="numero_fornecedor" onkeypress="mascara(this, somentenum)" maxlength="5">
+                </td>
+            </tr>
+
+            <br>
+
+            <tr>
+                <td>
+                    <input type="submit" class="button" value="Cadastrar">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+        <br>
+        <br>
+
+        <address>
+            Kaio Gomes do Nascimento Mazza - Tecnico - Desenvolvimento de Sistemas
+        </address>
+</body>
+
+</html>

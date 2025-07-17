@@ -1,0 +1,136 @@
+table{
+    color:F8F6F3;
+    background-color:#F8F6F3;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 15pt;
+    margin: auto;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #dfae65;
+    margin-top: 18px;
+    padding: 22px;
+}
+
+h1, h3, h4{
+    text-align: center;
+    color: #F8F6F3;
+}
+
+p{
+    text-align: center;
+    color: #F8F6F3;
+}
+
+body{
+    background-color: #3A3A3A;
+}
+
+.button{
+    background-color: F8F6F3;
+    border-color: #D52B1E;
+    border: 150;
+    border-radius: 5px;
+    width: 130px;
+}
+
+.table-funcionario{
+    text-align: center;
+    margin: auto;
+    border: 1px;
+}
+
+select{
+    width: 175px;
+}
+
+img{
+    text-align: center;
+}
+
+th{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+address{
+    color: #F8F6F3;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #D52B1E;
+}
+
+li{
+    float: left;
+    color: #F8F6F3;
+}
+
+li a, .dropbtn{
+    display: inline-block;
+    color: #F8F6F3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn{
+    background-color: #be0d00;
+}
+
+li.dropdown{
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #D52B1E;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    color: #F8F6F3;
+    padding: 16px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover{
+    background-color: #be0d00;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #be0d00;
+}
+
+input[type="button"]:hover {
+    background-color: #D52B1E;
+}
+
+input[type="button"] {
+    background-color: #D52B1E;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}

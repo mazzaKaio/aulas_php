@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario funcionario</title>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="../functions.js"></script>
+</head>
+
+<body bgcolor="">
+
+    <ul>
+        <li><a href="../menu_principal.html">Inicio</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Cadastrar</a>
+            <div class="dropdown-content">
+                <a href="fornecedor.html">Fornecedor</a>
+                <a href="tela_funcionario.html">Funcionario</a>
+                <a href="formulario_cliente_css.html">Cliente</a>
+                <a href="FormularioPeca_CSS.html">Produto</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Pesquisar</a>
+            <div class="dropdown-content">
+                <a onclick="nao_disp()">Fornecedor</a>
+                <a onclick="nao_disp()">Funcionario</a>
+                <a onclick="nao_disp()">Cliente</a>
+                <a onclick="nao_disp()">Produto</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Alterar</a>
+            <div class="dropdown-content">
+                <a onclick="nao_disp()">Fornecedor</a>
+                <a onclick="nao_disp()">Funcionario</a>
+                <a onclick="nao_disp()">Cliente</a>
+                <a onclick="nao_disp()">Produto</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Excluir</a>
+            <div class="dropdown-content">
+                <a onclick="nao_disp()">Fornecedor</a>
+                <a onclick="nao_disp()">Funcionario</a>
+                <a onclick="nao_disp()">Cliente</a>
+                <a onclick="nao_disp()">Produto</a>
+            </div>
+        </li>
+    </ul>
+
+    <table class="">
+
+        <tr>
+            <th> <img src="Logo_vortex.png" width="100"></th>
+            <th>
+                <h2> Cadastro funcionario</h>
+            </th>
+        </tr>
+
+        <tr>
+            <form action="POST" ACTION="/cgi-bin/post-query">
+                <td>nome : </td>
+                <td><input type="text" name="Nome_funcionario" expto="nome_funcionario" onkeypress="mascara(this, somentetexto)"></input></td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="POST" ACTION="/cgi-bin/post-query">
+                <td> Telefone : </td>
+                <td><input type="text" name="Telefone_funcionario" expto="telefone" onkeypress="mascara(this, telefone)" maxlength="15"></input></td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="post" action="/cig-bin/post-query">
+                <td>CPF :</td>
+                <td> <input type="text" name="CPF_funcionario" expto="CPF" onkeypress="mascara(this, rgecpf)" maxlength="14"></input></td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="post" action="/cig-bin/post-query">
+                <td>Endereço</td>
+                <td> <input type="text" name="Endereço_funcionario" expto="endereco"></input></td>
+            </form>
+        </tr>
+
+
+        <tr>
+            <form action="post" action="/cig-bin/post-query">
+                <td>Cargo :</td>
+                <td> <input type="text" name="Cargo_funcionario" expto="cargo"></input></td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="post" action="/cig-bin/post-query">
+                <td>Salario :</td>
+                <td> <input type="number" name="Cargo_funcionario" expto="cargo" onkeypress="mascara(this, somentenum)"></input></td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="post" action="/cig-bin/post-query">
+                <td>Foto funcionario :</td>
+                <td> <input type="file" name="Imagem_funcionario" expto="imagem"></input></td>
+            </form>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><button class="button">Cadastrar</button></td>
+        </tr>
+
+
+        </form>
+
+    </table>
+
+</body>
+
+</html>
