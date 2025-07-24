@@ -42,7 +42,7 @@
                 echo "<br>IE do fornecedor: ".$info['ie'];
                 echo "<br>Telefone do fornecedor: ".$info['telefone'];
                 echo "<br><h4>ENDEREÇO:</h4>";
-                echo "<br>CEP do fornecedor: ".$info['cep'];
+                echo "CEP do fornecedor: ".$info['cep'];
                 echo "<br>Estado do fornecedor: ".$info['estado'];
                 echo "<br>Cidade do fornecedor: ".$info['cidade'];
                 echo "<br>Bairro do fornecedor: ".$info['bairro'];
