@@ -2,6 +2,7 @@
     session_start();
 
     if (isset($_GET['nome']) && $_GET['nome'] != '') {
+        // Declarando uma array chamada 'tarefa'
         $tarefa = array();
 
         $tarefa['nome'] = $_GET['nome'];
@@ -29,11 +30,10 @@
         $_SESSION['lista_tarefas'][] = $tarefa;
     }
 
-    $lista_tarefas = array();
-    if (isset($_SESSION['lista_tarefas'])) {
+    if (array_key_exists('lista_tarefas', $_SESSION)) {
         $lista_tarefas = $_SESSION['lista_tarefas'];
     } else {
-        $lista_tarefas = array();
+        $lista_tarefas = [];
     }
 
     include "template.php"
