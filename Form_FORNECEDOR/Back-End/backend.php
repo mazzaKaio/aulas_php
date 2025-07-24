@@ -13,7 +13,7 @@
         if (isset($_GET['nome_fornecedor']) && isset($_GET['cnpj_fornecedor']) && isset($_GET['email_fornecedor']) &&
             isset($_GET['ie_fornecedor']) && isset($_GET['telefone_fornecedor']) && isset($_GET['cep_fornecedor']) &&
             isset($_GET['estado_fornecedor']) && isset($_GET['cidade_fornecedor']) && isset($_GET['bairro_fornecedor']) && 
-            isset($_GET['logradouro_fornecedor']) && isset($_GET['numero_fornecedor']) ) {
+            isset($_GET['logradouro_fornecedor']) && isset($_GET['numero_fornecedor'])) {
             
             $informacoes = array(
                 "nome" => $_GET['nome_fornecedor'],
@@ -34,7 +34,7 @@
 
         if (isset($_SESSION['informacoes'])){
             echo "<h1>INFORMAÇÕES FORNECEDOR:</h1>";
-            
+        
             foreach ($_SESSION['informacoes'] as $info) {
                 echo "<br>Nome do fornecedor: ".$info['nome'];
                 echo "<br>CNPJ do fornecedor: ".$info['cnpj'];
