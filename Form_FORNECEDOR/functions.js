@@ -94,6 +94,8 @@ cep.addEventListener('blur', () => {
 
         alert("Aguarde enquanto as informações são resgatadas!");
 
+        console.log(ceplimpo);
+
         getcep(ceplimpo);
     }
 })
@@ -110,9 +112,11 @@ async function getcep(cep){
                 throw new Error("CEP não encontrado!");
         }
 
+        console.log(dados);
+
         preencherFormulario(dados);
     } catch (error) {
-        alert("O CEP que você inseriu não é valido! Verifique-o")
+        alert("O CEP que você inseriu não é valido! Verifique-o");
         clearForm();
     }
 }
@@ -122,13 +126,13 @@ function preencherFormulario(dados){
     document.getElementById('cidade_fornecedor').value = dados.localidade;
     document.getElementById('bairro_fornecedor').value = dados.bairro;
     document.getElementById('estado_fornecedor').value = dados.uf;
-    document.getElementById('numero').value = '';
+    document.getElementById('numero').value = "";
 }
 
 function clearForm(){
-    document.getElementById('estado_fornecedor').value = "";
+    document.getElementById('logradouro_fornecedor').value = "";
     document.getElementById('cidade_fornecedor').value = "";
     document.getElementById('bairro_fornecedor').value = "";
     document.getElementById('cep_fornecedor').value = "";
-    document.getElementById('estado_fornecedor').value = 'SP';
+    document.getElementById('estado_fornecedor').value = "";
 }
