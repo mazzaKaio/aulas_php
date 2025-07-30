@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Clientes</title>
 
-    <link rel="stylesheet" href="../Style/style.css">
+    
 </head>
 <body>
     <h2>Lista de Clientes</h2>
