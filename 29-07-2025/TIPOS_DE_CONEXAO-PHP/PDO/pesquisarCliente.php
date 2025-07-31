@@ -3,7 +3,7 @@
 
     $conexao = conectarBanco();
 
-    $busca = $_GET['busca'] ;
+    $busca = $_GET['busca'] ?? "";
 
     if (!$busca) {
         ?>
