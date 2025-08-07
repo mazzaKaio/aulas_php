@@ -37,12 +37,62 @@
     }
 
     $host = "localhost";
-    $database = "armazena_imagem";
+    $database = "armazena_imagens";
     $user = "root";
     $pass = "";
 
     try {
         // CONEXAO COM O BANCO USNADO 'PDO'
         $pdo = new PDO("mysql:host=$host; dbname=$database", $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto'])) {
+
+            if($_FILES['foto']['error'] == 0) {
+                $nome = $_POST['nome'];
+                $telefone = $_POST['telefone'];
+                $nome_foto = $_FILES['foto']['name']; // PEGA O NOME ORIGINAL DO ARQUIVO
+                $tipo_foto = $_FILES['foto']['type']; // PEGA O TIPO mime DA IMAGEM
+
+                // REDIMENSIONA A IMAGEM
+                // O CODIGO ABAIXO CUJA VARIAVEL É 'tmp_name" É O CAMINHO TEMPORÁRIO DO ARQUIVO
+                $foto = redimensionar_imagem($_FILES['foto']['tmp_name'], 300, 400);
+
+                // INSERE NO BANCO DE DADOS USANDO O SQL PREPARED
+                $query = "INSERT INTO funcionarios (nome, telefone, nome_foto, tipo_foto, foto) VALUES (:nome, :telefone, :nome_foto, :tipo_foto, :foto)";
+                
+                $stmt = $pdo->prepare($query); // RESPONSÁVEL POR PREPARAR A QUERY PARA EVITAR ATAQUES SQL INJECTION
+
+                $stmt->bindParam(':nome', $nome); // LIGA OS PARAMETROS AS VARIAVEIS
+                $stmt->bindParam(':telefone', $telefone); // LIGA OS PARAMETROS AS VARIAVEIS
+                $stmt->bindParam(':nome_foto', $nome_foto); // LIGA OS PARAMETROS AS VARIAVEIS
+                $stmt->bindParam(':tipo_foto', $tipo_foto); // LIGA OS PARAMETROS AS VARIAVEIS
+                $stmt->bindParam(':foto', $foto, PDO::PARAM_LOB); // 'LOB' = Large Object, USADO PARA DADOS BINARIOS COMO IMAGEM
+
+                if ($stmt->execute()) {
+                    echo "Funcionário cadastrado com sucesso!";
+                } else {
+                    echo "Erro ao cadastrar o funcionário.";
+                }
+            } else {
+                echo "Erro ao fazer upload da foto! Código: ".$_FILES['foto']['error'];
+            }
+        }
+    } catch(PDOExcpetion $e) {
+        echo "Erro: ".$e->getMessage(); // MOSTRA O ERRO (SE HOUVER)
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Imagens</title>
+</head>
+<body>
+    <h1>Lista de Imagens</h1>
+
+    <a href="consulta_funcionario.php">Listar Funcionários</a>
+</body>
+</html>
