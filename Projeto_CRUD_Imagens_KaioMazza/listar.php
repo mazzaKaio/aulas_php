@@ -11,7 +11,7 @@
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // RECUPERA TODOS OS FUNCIONARIOS DO BANCO DE DADOS
-        $query = "SELECT id, nome FROM funcionarios";
+        $query = "SELECT id, nome, cargo, foto FROM funcionarios";
 
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -52,6 +52,32 @@
     <?php include_once 'includes/cabecalho.php' ?>    
 
     <h1>Listar Funcionários</h1>
+
+    <table border>
+        <tr>
+            <th>ID:</th>
+            <th>Nome:</th>
+            <th>Cargo:</th>
+            <th>Foto:</th>
+            <th>Função</th>
+        </tr>
+
+        <?php foreach($funcionarios as $funcionario): ?>
+            <form method="POST" style="display: inline;"></form>
+                <tr>
+                    <td><?= htmlspecialchars($funcionario['id']) ?></td>
+                    <td><?= htmlspecialchars($funcionario['nome']) ?></td>
+                    <td><?= htmlspecialchars($funcionario['cargo']) ?></td>
+                    <td><?php echo $funcionario['foto']; ?></td>
+                    <td>
+                        <input type="hidden" name="excluir_id" value="<?= $funcionario['id'] ?>">
+
+                        <button type="submit">Excluir</button>
+                    </td>
+                </tr>
+            </form>
+        <?php endforeach; ?>
+    </table>
 
     <ul>
         <?php foreach($funcionarios as $funcionario): ?>

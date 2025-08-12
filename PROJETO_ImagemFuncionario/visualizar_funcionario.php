@@ -24,7 +24,7 @@
                 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['excluir_id'])) {
                     $excluir_id = $_POST['excluir_id'];
 
-                    $query_exclusao = "DELETE FROM funcionario WHERE id = :id";
+                    $query_exclusao = "DELETE FROM funcionarios WHERE id = :id";
 
                     $stmt_exclusao = $pdo->prepare($query_exclusao);
                     $stmt_exclusao->bindParam(":id", $excluir_id, PDO::PARAM_INT);
@@ -33,8 +33,8 @@
                     header('Location: consulta_funcionario.php');
                     exit();
                 }
-
                 ?>
+                
                 <!DOCTYPE html>
                 <html lang="pt-br">
                 <head>
@@ -48,13 +48,27 @@
                     <p>Nome: <?= htmlspecialchars($funcionario['nome']) ?></p>
                     <p>Telefone: <?= htmlspecialchars($funcionario['telefone']) ?></p>
                     <p>Tipo foto: <?= htmlspecialchars($funcionario['tipo_foto']) ?></p>
-                    <p>Foto: <?= htmlspecialchars($funcionario['foto']) ?></p>
+                    <p>Foto:</p>
+                    <img src="data:<?=$funcionario['tipo_foto']?>;base64,<?=base64_encode($funcionario['foto'])?>" alt="Foto do funcionário">
+
+                    <form method="POST">
+                        <input type="hidden" name="excluir_id" value="<?= $id ?>">
+
+                        <button type="submit">Excluir Funcionário</button>
+                    </form>
                 </body>
                 </html>
+
                 <?php
+
+                
+            } else {
+                echo "Funcionário não encontrado!";
             }
+        } else {
+            echo "ID do funcinário não foi fornecido!";
         }
     } catch (PDOExcpetion $e) {
-        echo "Só para testar: ">$e->getMessage();
+        echo "Erro: ".$e->getMessage();
     }
 ?>
