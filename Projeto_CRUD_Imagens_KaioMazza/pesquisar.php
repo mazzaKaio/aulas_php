@@ -13,7 +13,7 @@
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
 
-            $query = "SELECT nome, telefone, tipo_foto, foto FROM funcionarios WHERE id = :id";
+            $query = "SELECT nome, cargo, foto FROM funcionarios WHERE id = :id";
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -53,9 +53,9 @@
                     <h1>Visualizar Funcionário</h1>
 
                     <p>Nome: <?= htmlspecialchars($funcionario['nome']) ?></p>
-                    <p>Telefone: <?= htmlspecialchars($funcionario['telefone']) ?></p>
-                    <p>Tipo foto: <?= htmlspecialchars($funcionario['tipo_foto']) ?></p>
-                    <p>Foto: <?= htmlspecialchars($funcionario['foto']) ?></p>
+                    <p>Cargo: <?= htmlspecialchars($funcionario['cargo']) ?></p>
+                    <?php $foto_base64 = base64_encode($funcionario['foto']);
+                    echo "<img src='data:image/jpeg;base64,$foto_base64' alt='Foto do Funcionário' style='max-width: 200px; height: auto;' />"; ?>
                 </body>
                 </html>
 

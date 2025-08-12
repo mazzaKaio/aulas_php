@@ -76,7 +76,7 @@
 
         <tr>
             <td> Codigo Peça: </td>
-            <td> <input type="text" name="Entry_CodPeca" onkeypress="mascara(this, somentenum)"> </td>
+            <td> <input type="text" id="Entry_CodPeca" name="Entry_CodPeca" onkeypress="mascara(this, somentenum)"> </td>
         </tr>
 
 
@@ -85,7 +85,7 @@
             <td> Tipo de Peça: </td>
 
             <td>
-                <select name="CB_TipoPeca">
+                <select id="CB_TipoPeca" name="CB_TipoPeca">
                     <option> Tipo de Peça</option>
                 </select>
             </td>
@@ -95,32 +95,32 @@
 
         <tr>
             <td> Descrição: </td>
-            <td> <input type="text" name="Entry_Descricaco"> </td>
+            <td> <input type="text" id="Entry_Descricao" name="Entry_Descricao"> </td>
         </tr>
 
 
         <tr>
             <td> Quantidade: </td>
-            <td> <input type="text" name="Entry_Quantidade" onkeypress="mascara(this, somentenum)" maxlength="5"></td>
+            <td> <input type="text" id="Entry_Quantidade" name="Entry_Quantidade" onkeypress="mascara(this, somentenum)" maxlength="5"></td>
         </tr>
 
 
         <tr>
             <td> Lote: </td>
-            <td> <input type="text" name="Entry_Lote" maxlength="6"></td>
+            <td> <input type="text" id="Entry_Lote" name="Entry_Lote" maxlength="6"></td>
         </tr>
 
 
         <tr>
             <td> Valor: </td>
-            <td> <input type="float" name="Valor" onkeypress="mascara(this, somentenum)"></td>
+            <td> <input type="float" id="Entry_Valor" name="Entry_Valor" onkeypress="mascara(this, somentenum)"></td>
         </tr>
 
 
         <tr>
             <td> Fornecedor: </td>
             <td>
-                <select name="CB_Fornecedor">
+                <select id="CB_Fornecedor" name="CB_Fornecedor">
                     <option> Fornecedor </option>
                 </select>
             </td>
@@ -129,16 +129,18 @@
 
         <tr>
             <td> Codigo Fornecedor: </td>
-            <td> <input type="text" name="Entry_Fornecedor" onkeypress="mascara(this, somentenum)"></td>
+            <td> <input type="text" id="Entry_Fornecedor" name="Entry_Fornecedor" onkeypress="mascara(this, somentenum)"></td>
         </tr>
 
 
         <tr>
-            <td> <input type="button" class="button" name="Cadastrar" value="CADASTRAR"></td>
+            <td> <input type="button" class="button" id="Button_Cadastrar" name="Button_Cadastrar" value="CADASTRAR"></td>
 
         </tr>
 
-    </table>
+        <table id="table">
+
+        </table>
 
     <br><br>
 
