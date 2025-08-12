@@ -51,7 +51,7 @@
             <li>
                 <!-- O CÓDIGO ABAIXO CRIA LINK PARA VISUALIZAR DETALHES DO FUNCIONÁRIO -->
                 <a href="visualizar_funcionario.php?id=<?= $funcionario['id'] ?>">
-                    <?= htmlspecialchars($funcionario['nome' ])?>
+                    <?= htmlspecialchars($funcionario['nome'])?>
                 </a>
                 
                 <!-- FORMULARIO PARA EXCLUIR FUNCIONARIO -->
