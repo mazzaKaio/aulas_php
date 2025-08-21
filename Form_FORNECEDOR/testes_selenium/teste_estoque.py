@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 
 # Inicia o servicção do ChromeDriver
-servico = webdriver.ChromeService(executable_path="C:/Users/kaio_mazza/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe")
+servico = webdriver.ChromeService(executable_path="C:/xampp/htdocs/Projeto-tbit-manager-estoque/chromedriver-win64/chromedriver.exe")
 driver = webdriver.Chrome(service=servico)
 
 try:
